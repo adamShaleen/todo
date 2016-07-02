@@ -41,7 +41,11 @@ mongoose.set('debug', true);
 var mongoURI = config.MONGO_URI;
 var port = config.PORT;
 
-mongoose.connect(mongoURI);
+// mongoose.connect(mongoURI);
+
+mongoose.connect('mongodb://localhost/yagonnawanna', function(error) {
+    console.log('If ' + error + ' = undefined, we can party');
+});
 
 mongoose.connection.once('open', function() {
     console.log('Connnected to Mongo DB at', mongoURI);
