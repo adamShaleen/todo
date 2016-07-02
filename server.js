@@ -5,14 +5,14 @@ var session = require('express-session');
 var mongoose = require('mongoose');
 
 // CONFIG
-var config = require('./config.js');
+var config = require('./server/config.js');
 
 // CONTROLLER
-var userController = require('./userController.js');
-var listController = require('./listController.js');
+var userController = require('./server/userController.js');
+var listController = require('./server/listController.js');
 
 // SERVICES
-var passport = require('./passport.js');
+var passport = require('./server/passport.js');
 
 //POLOCIES
 var isAuthed = function(request, response, next) {
