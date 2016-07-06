@@ -14,7 +14,7 @@ var listController = require('./server/listController.js');
 // SERVICES
 var passport = require('./server/passport.js');
 
-//POLOCIES
+//POLICIES
 var isAuthed = function(request, response, next) {
     if (!request.isAuthenticated()) return response.status(401).send();
     return next();
@@ -34,18 +34,35 @@ app.use(passport.initialize());
 app.use(passport.session());
 mongoose.set('debug', true);
 
-//ENDPOINTS
+//---------------ENDPOINTS-----------------------
+
+// User
+app.post('/users', userController.register);
+
+app.get('/me', isAuthed, userController.me);
+
+app.put('/users/:id', isAuthed, userController.update);
+
+app.post('/login', passport.authenticate('local', {
+}), function(request, response, next) {
+    response.send({login: true});
+});
+
+app.get('/logout', function(request, response, next) {
+    request.logout();
+    return response.status(200).send('logged out');
+});
 
 
 //CONNECTIONS
 var mongoURI = config.MONGO_URI;
 var port = config.PORT;
 
-// mongoose.connect(mongoURI);
+mongoose.connect(mongoURI);
 
-mongoose.connect('mongodb://localhost/yagonnawanna', function(error) {
-    console.log('If ' + error + ' = undefined, we can party');
-});
+// mongoose.connect('mongodb://localhost/yagonnawanna', function(error) {
+//     console.log('If ' + error + ' = undefined, we can party');
+// });
 
 mongoose.connection.once('open', function() {
     console.log('Connnected to Mongo DB at', mongoURI);
