@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
+var todoSchema = require('./todo.js');
 var Schema = mongoose.Schema;
 
 var User = new Schema ({
