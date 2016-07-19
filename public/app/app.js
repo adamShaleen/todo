@@ -9,6 +9,7 @@ angular.module('yagonnawanna', ['ui.router'])
         })
 
         .state('todo', {
+            url: '/todo',
             templateUrl: './todo/todo.html',
             controller: 'controller',
         });
