@@ -25,7 +25,7 @@ this.getUser = function() {
 //REGISTER NEW USER
 this.register = function(user) {
     return $http({
-        mthod: 'POST',
+        method: 'POST',
         url: '/users',
         data: user
     }).then(function(response) {

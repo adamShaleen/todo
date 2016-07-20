@@ -10,7 +10,7 @@ $scope.register = function() {
     });
 };
 
-//LOCAL AUTH LOGIN
+//LOGIN
 $scope.login = function() {
     service.login($scope.credentials).then(function(response) {
         $state.go('todo');
