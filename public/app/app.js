@@ -2,7 +2,7 @@ angular.module('yagonnawanna', ['ui.router'])
 
 .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
-        .state('/login', {
+        .state('login', {
             url: '/login',
             templateUrl: './login/login.html',
             controller: 'controller',

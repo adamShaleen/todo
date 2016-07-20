@@ -17,5 +17,21 @@ $scope.login = function() {
     });
 };
 
+//GET USER /DISPLAY USER
+$scope.displayUser = function() {
+    service.getUser().then(function(response) {
+        $scope.user_name = response;
+    });
+};
+
+$scope.displayUser();
+
+//Logout
+$scope.logout = function() {
+    service.logout().then(function(response) {
+        $state.go('login');
+    });
+};
+
 
 });  // closing controller tag
