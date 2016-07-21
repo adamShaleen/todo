@@ -43,6 +43,17 @@ this.logout = function() {
     });
 };
 
+//CREATE todo
+this.createTodo = function(newTODO) {
+    return $http({
+        method: 'POST',
+        url: '/todo',
+        data: newTODO
+    }).then(function(response) {
+        return response.data;
+    });
+};
+
 
 
 });  // closing service tag
