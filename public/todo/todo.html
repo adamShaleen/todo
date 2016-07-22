@@ -1,7 +1,7 @@
 <p>User name: {{user_name.email}}</p>
 <button type="button" ng-click="logout()">logout</button>
 <br>
-<input ng-model="newTODO" placeholder="New TODO"></input>
-<button type="button" ng-click="addTODO()">Add TODO</button>
+<input ng-model="todo" placeholder="New TODO"></input>
+<button type="button" ng-click="addTodo(todo)">Add TODO</button>
 <br>
-<p ng-repeat="todo in todos">{{todo}}</p>
+<p>Todo item: {{user_name.todo}}</p>

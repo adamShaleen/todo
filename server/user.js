@@ -4,7 +4,7 @@ var todoSchema = require('./todo.js');
 var Schema = mongoose.Schema;
 
 var User = new Schema ({
-    email: {type: String, index: true, trim: true, required: true},
+    email: {type: String, index: true, trim: true, required: true, unique: true},
     password: {type: String, required: true},
     todo: [
         {

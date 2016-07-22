@@ -35,10 +35,18 @@ $scope.logout = function() {
 
 
 // Create new todo
-$scope.addTODO = function() {
-    service.createTodo($scope.newTODO).then(function(response) {
-        $scope.todos = response;
+$scope.addTodo = function(todo) {
+    service.addTodo().then(function(response) {
+        $scope.user_name.todo.push(todo);
     });
 };
+
+
+
+// $scope.addTODO = function() {
+//     service.createTodo($scope.newTODO).then(function(response) {
+//         $scope.todos = response;
+//     });
+// };
 
 });  // closing controller tag
