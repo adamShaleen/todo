@@ -53,7 +53,7 @@ app.get('/logout', function(request, response, next) {
 
 app.put('/todo/add', todoController.addTodo);
 
-// app.post('/todo', todoController.createTODO);
+app.post('/todo', todoController.createTODO);
 // app.get('/todos', todoController.getTODO);
 // app.put('/todo/:id', todoController.updateTODO);
 // app.delete('/todo/:id', todoController.deleteTODO);

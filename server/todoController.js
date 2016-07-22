@@ -15,16 +15,16 @@ module.exports = {
         });
     },
 
-    // createTODO: function(request, response, next) {
-    //     TODO.create(request.body, function(error, serverResponse) {
-    //         if (error) {
-    //             return response.status(500).send(error);
-    //         }
-    //         else {
-    //         response.status(200).send(serverResponse);
-    //         }
-    //     });
-    // },
+    createTODO: function(request, response, next) {
+        TODO.create(request.body, function(error, serverResponse) {
+            if (error) {
+                return response.status(500).send(error);
+            }
+            else {
+            response.status(200).send(serverResponse);
+            }
+        });
+    },
     //
     // getTODO: function(request, response, next) {
     //     TODO.find(request.query, function(error, serverResponse) {
