@@ -51,12 +51,12 @@ app.get('/logout', function(request, response, next) {
 
 // Todo
 
-app.put('/todo/add', todoController.addTodo);
+// app.put('/todo/add', todoController.addTodo);
 
 app.post('/todo', todoController.createTODO);
-// app.get('/todos', todoController.getTODO);
-// app.put('/todo/:id', todoController.updateTODO);
-// app.delete('/todo/:id', todoController.deleteTODO);
+app.get('/todos', todoController.getTODO);
+app.put('/todo/:id', todoController.updateTODO);
+app.delete('/todo/:id', todoController.deleteTODO);
 
 //CONNECTIONS
 var mongoURI = config.MONGO_URI;

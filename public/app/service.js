@@ -45,15 +45,15 @@ this.logout = function() {
 
 //CREATE todo
 
-this.addTodo = function(todo) {
-    return $http({
-        method: 'PUT',
-        url: '/todo/add',
-        data: todo
-    }).then(function(response) {
-        return response.data;
-    });
-};
+// this.addTodo = function(todo) {
+//     return $http({
+//         method: 'PUT',
+//         url: '/todo/add',
+//         data: todo
+//     }).then(function(response) {
+//         return response.data;
+//     });
+// };
 
 this.createTodo = function(newTODO) {
     return $http({
