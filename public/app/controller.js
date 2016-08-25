@@ -34,18 +34,4 @@ $scope.logout = function() {
 };
 
 
-// Create new todo
-$scope.addTodo = function(todo) {
-    service.addTodo().then(function(response) {
-        $scope.user_name.todo.push(todo);
-    });
-};
-
-// $scope.addTODO = function(newTODO) {
-//     service.createTodo(newTODO).then(function(response) {
-//         $scope.todos = response;  //change this to display all TODO
-//         console.log(response);
-//     });
-// };
-
 });  // closing controller tag

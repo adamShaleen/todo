@@ -9,7 +9,6 @@ var config = require('./server/config.js');
 
 // CONTROLLER
 var userController = require('./server/userController.js');
-var todoController = require('./server/todoController.js');
 
 // SERVICES
 var passport = require('./server/passport.js');
@@ -49,14 +48,6 @@ app.get('/logout', function(request, response, next) {
     return response.status(200).send('logged out');
 });
 
-// Todo
-
-app.put('/todo/add', todoController.addTodo);
-
-// app.post('/todo', todoController.createTODO);
-// app.get('/todos', todoController.getTODO);
-// app.put('/todo/:id', todoController.updateTODO);
-// app.delete('/todo/:id', todoController.deleteTODO);
 
 //CONNECTIONS
 var mongoURI = config.MONGO_URI;
