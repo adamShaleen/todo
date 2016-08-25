@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var todoSchema = new Schema ({
-    item: {type: String}
+    item: {type: String, required: true}
 });
 
 

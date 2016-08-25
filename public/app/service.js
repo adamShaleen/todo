@@ -45,25 +45,26 @@ this.logout = function() {
 
 //CREATE todo
 
-// this.addTodo = function(todo) {
-//     return $http({
-//         method: 'PUT',
-//         url: '/todo/add',
-//         data: todo
-//     }).then(function(response) {
-//         return response.data;
-//     });
-// };
-
-this.createTodo = function(newTODO) {
+this.addTodo = function(todo) {
     return $http({
-        method: 'POST',
-        url: '/todo',
-        data: newTODO
+        method: 'PUT',
+        url: '/todo/add',
+        data: todo
     }).then(function(response) {
         return response.data;
     });
 };
+
+// this.createTodo = function(newTODO) {
+//     return $http({
+//         method: 'POST',
+//         url: '/todo',
+//         data: newTODO
+//     }).then(function(response) {
+//         console.log(response.data);
+//         return response.data;
+//     });
+// };
 
 
 
