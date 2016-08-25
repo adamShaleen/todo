@@ -3,6 +3,7 @@ var bcrypt = require('bcryptjs');
 var todoSchema = require('./todo.js');
 var Schema = mongoose.Schema;
 
+// Tested in postman.  User object has an empty array of todos but cannot seem to add anything.
 var User = new Schema ({
     email: {type: String, index: true, trim: true, required: true, unique: true},
     password: {type: String, required: true},
